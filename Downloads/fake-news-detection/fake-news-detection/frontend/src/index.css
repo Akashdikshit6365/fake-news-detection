@@ -1,0 +1,127 @@
+:root {
+  --color-bg-primary: #07131f;
+  --color-bg-secondary: #0d1b2a;
+  --color-bg-tertiary: #102236;
+  --color-border: rgba(162, 214, 202, 0.14);
+  --color-text-primary: #f5fbfa;
+  --color-text-secondary: rgba(245, 251, 250, 0.72);
+  --color-accent-primary: #2cc295;
+  --color-accent-hover: #128c7e;
+  --color-success: #29bf90;
+  --color-danger: #ff6f61;
+  --color-warning: #ffc55d;
+  --color-info: #7ce1cf;
+  --font-sans: 'Segoe UI', 'Aptos', 'Trebuchet MS', sans-serif;
+  --font-mono: 'Cascadia Code', 'SF Mono', Consolas, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  color: var(--color-text-primary);
+  background: var(--color-bg-primary);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: var(--color-accent-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-accent-hover);
+}
+
+button {
+  font-family: inherit;
+}
+
+code {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  background: var(--color-bg-secondary);
+  padding: 2px 6px;
+  border-radius: 8px;
+  color: var(--color-accent-primary);
+}
+
+/* Focus styles for accessibility */
+:focus-visible {
+  outline: 2px solid var(--color-accent-primary);
+  outline-offset: 2px;
+}
+
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--color-accent-primary);
+  outline-offset: 2px;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-secondary);
+}
+
+/* Loading animation */
+@keyframes skeleton-loading {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.skeleton {
+  animation: skeleton-loading 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  background: linear-gradient(
+    to right,
+    var(--color-bg-secondary) 0%,
+    var(--color-bg-tertiary) 20%,
+    var(--color-bg-secondary) 40%,
+    var(--color-bg-secondary) 100%
+  );
+  background-size: 1000px 100%;
+}
